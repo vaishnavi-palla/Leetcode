@@ -4,8 +4,7 @@ class Solution:
             return mat
         dum = []
         for row in mat:
-            for j in row:
-                dum.append(j)
+            dum.extend(row)
         res = []
         for i in range(r):
             res.append(dum[:c])
