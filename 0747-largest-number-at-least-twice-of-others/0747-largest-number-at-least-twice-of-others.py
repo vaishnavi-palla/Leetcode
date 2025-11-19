@@ -1,9 +1,7 @@
 class Solution:
     def dominantIndex(self, nums: List[int]) -> int:
-        maxi = max(nums)
-        res = [i for i in range(len(nums)) if maxi == nums[i]]
-        for i in range(len(nums)):
-            if nums[i]*2 > maxi and nums[i] != maxi:
-                return -1
+        dum = sorted(nums)
+        if dum[-2]*2 <= dum[-1]:
+            return nums.index(dum[-1])
         else:
-            return res[0]
+            return -1
