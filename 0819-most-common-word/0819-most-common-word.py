@@ -7,10 +7,7 @@ class Solution:
                 if i.isalpha():
                     dum = dum+i
             para.append(dum.lower())
-        dum = []
-        for word in para:
-            if word not in banned:
-                dum.append(word)
+        dum = [w for w in para if w not in banned]
         counts = Counter(dum)
         maxi = max(counts,key=counts.get)
         return maxi
