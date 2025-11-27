@@ -1,11 +1,13 @@
 class Solution:
     def countWords(self, words1: List[str], words2: List[str]) -> int:
-        count1 = Counter(words1)
-        count2 = Counter(words2)
-        count1 = [w for w,f in count1.items() if f == 1]
-        count2 = [w for w,f in count2.items() if f == 1]
-        res = []
-        for i in count1:
-            if i in count2:
-                res.append(i)
-        return len(res)
+        counter1 = Counter(words1)
+        counter2 = Counter(words2)
+        c = 0
+        for word in counter1:
+            if counter1[word] != 1:
+                continue
+            if word not in counter2:
+                continue
+            if counter2[word] == 1:
+                c += 1
+        return c
