@@ -4,10 +4,7 @@ class Solution:
         for row in matrix:
             if len(set(row)) != n:
                 return False
-        for i in range(n):
-            seen = set()
-            for j in range(n):
-                seen.add(matrix[j][i])
-            if len(seen) != n:
+        for col in zip(*matrix):
+            if len(set(col)) != n:
                 return False
         return True
