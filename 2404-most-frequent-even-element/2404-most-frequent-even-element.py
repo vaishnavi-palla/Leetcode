@@ -6,7 +6,4 @@ class Solution:
         counts = Counter(nums)
         max_freq = max(counts.values())
         res = [num for num,freq in counts.items() if freq == max_freq]
-        if res:
-            return min(res)
-        else:
-            return -1
+        return min(res)
