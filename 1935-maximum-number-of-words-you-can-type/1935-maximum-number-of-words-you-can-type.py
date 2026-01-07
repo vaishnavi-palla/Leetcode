@@ -3,10 +3,9 @@ class Solution:
         text = text.split()
         n = 0
         for word in text:
-            valid = True
             for i in word:
                 if i in brokenLetters:
-                    valid = False
-            if valid:
+                    break
+            else:
                 n += 1
         return n
