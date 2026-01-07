@@ -1,6 +1,5 @@
 class Solution:
     def countElements(self, nums: List[int]) -> int:
-        nums.sort()
         small = min(nums)
         big = max(nums)
         res = []
